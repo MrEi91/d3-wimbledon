@@ -43,10 +43,10 @@ const colorScale = d3.scaleLinear()
   .domain([0, d3.max(data)])
   .range(['peru', 'teal'])
 
-const xAxis = d3.axisBottom(xScale)
+const xAxis = d3.axisBottom(xScale).ticks(data.length)
 
   svg.append('g')
-    .call(xScale)
+    .call(xAxis)
     .attr('transform',`translate(0,${height})`)
 
   svg.selectAll('rect')
